@@ -1,123 +1,92 @@
-/* Configuração geral do body */
-body {
-    font-family: 'Bai Jamjuree', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #4caf50; /* Fundo verde para todo o site */
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Ben 10: Aventura no Espaço</title>
+</head>
+<body>
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <img src="ben10k.png" alt="Logo de Ben 10">
+            <p>Você é Ben Tennyson, um garoto de 10 anos que encontrou um dispositivo alienígena chamado Omnitrix. Com ele, você pode se transformar em diferentes alienígenas com poderes incríveis.</p>
+            <button class="btn-proximo" data-proximo="1">Transformar em Quatro Braços</button>
+            <button class="btn-proximo" data-proximo="2">Transformar em Chama</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <img src="Design sem nome (1).png" alt="Quatro Braços">
+            <p>Você se transformou em Quatro Braços! Agora você tem quatro braços e pode lutar contra os vilões.</p>
+            <button class="btn-proximo" data-proximo="3">Lutar contra Vilgax</button>
+            <button class="btn-proximo" data-proximo="4">Explorar a cidade</button>
+        </div>
+        <div class="passo" id="passo-2">
+            <img src="Design sem nome (2).png" alt="Calorífico">
+            <p>Você se transformou em Chama! Agora você pode controlar o fogo e derreter os obstáculos.</p>
+            <button class="btn-proximo" data-proximo="5">Lutar contra o Kevin</button>
+            <button class="btn-proximo" data-proximo="6">Explorar a floresta</button>
+        </div>
+        <div class="passo" id="passo-3">
+            <img src="Design sem nome (3).png" alt="Vilgax">
+            <p>Você derrotou Vilgax! Agora você é o herói da cidade.</p>
+            <button class="btn-proximo" data-proximo="7">Voltar para a base</button>
+        </div>
+        <div class="passo" id="passo-4">
+            <img src="Design sem nome (5).png" alt="Cidade">
+            <p>Você explorou a cidade e seu Omnitrix evolui.</p>
+            <button class="btn-proximo" data-proximo="8">Voltar para a base</button>
+        </div>
+        <div class="passo" id="passo-5">
+            <img src="Design sem nome (4).png" alt="Incendiário">
+            <p>Você derrotou o Kevin!</p>
+            <button class="btn-proximo" data-proximo="9">Voltar para a base</button>
+        </div>
+        <div class="passo" id="passo-6">
+            <img src="floresta.png" alt="Floresta">
+            <p>Você explorou a floresta e encontrou um segredo.</p>
+            <button class="btn-proximo" data-proximo="10">Voltar para a base</button>
+        </div>
+        <div class="passo" id="passo-7">
+            <img src="Design sem nome (8).png" alt="Base">
+            <p>Você voltou para a base e encontrou um novo desafio.</p>
+            <button class="btn-proximo" data-proximo="11">Aceitar o desafio</button>
+        </div>
+        <div class="passo" id="passo-8">
+            <img src="Design sem nome (7).png" alt="Base">
+            <p>Você voltou e ficou relaxando pelo resto do dia.</p>
+        </div>
+        <div class="passo" id="passo-9">
+            <img src="Design sem nome (8).png" alt="Base">
+            <p>Você voltou para a base e encontrou um novo desafio.</p>
+            <button class="btn-proximo" data-proximo="11">Aceitar o desafio</button>
+        </div>
+        <div class="passo" id="passo-10">
+            <img src="Design sem nome (8).png" alt="Base">
+            <p>Você voltou para a base e encontrou um novo desafio.</p>
+            <button class="btn-proximo" data-proximo="11">Aceitar o desafio</button>
+        </div>
+        <div class="passo" id="passo-11">
+            <img src="Design sem nome (9).png" alt="Desafio">
+            <p>Você aceitou o desafio e agora precisa derrotar o vilão mais poderoso de todos!</p>
+            <button class="btn-proximo" data-proximo="12">Lutar contra o vilão</button>
+        </div>
+        <div class="passo" id="passo-12">
+            <img src="Design sem nome (10).png" alt="Vitória">
+            <p>Parabéns! Você derrotou o vilão e salvou o universo!</p>
+        </div>
+        <!-- Novo passo secreto -->
+        <div class="passo" id="passo-secreto">
+            <img src="isso.jpg" alt="Passo Secreto">
+            <p>Você virou CLT.</p>
+        </div>
+    </main>
+    
+    <!-- Botão secreto no fundo -->
+    <button id="botao-secreto">Clique aqui para encontrar o segredo</button>
 
-/* Configuração do contêiner principal */
-main {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #ffffff; /* Fundo branco para o contêiner principal */
-    border: 1px solid #388e3c; /* Borda verde escura opcional */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    text-align: center; /* Centraliza o texto e o conteúdo */
-}
-
-/* Oculta as etapas até que sejam ativadas */
-.passo {
-    display: none;
-}
-
-/* Exibe a etapa ativa */
-.passo.ativo {
-    display: block;
-}
-
-/* Configuração das imagens */
-img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    object-fit: cover;
-    margin: 0 auto 20px auto; /* Centraliza e espaça a imagem */
-    display: block; /* Garantir que a margem funcione */
-    border-radius: 8px; /* Bordas arredondadas para imagens */
-}
-
-/* Configuração dos parágrafos */
-p {
-    font-size: 1.2em;
-    line-height: 1.6; /* Espaço mais amplo entre linhas para melhor legibilidade */
-    margin: 0 0 20px 0; /* Margem inferior para espaçamento */
-}
-
-/* Estilo dos botões */
-.btn-proximo {
-    font-size: 1.2em;
-    padding: 12px 25px; /* Aumenta o padding para botões maiores */
-    margin: 10px;
-    border-radius: 8px; /* Bordas arredondadas para botões */
-    background-color: #4caf50; /* Cor de fundo verde do botão */
-    color: #ffffff; /* Cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    cursor: pointer;
-    text-transform: uppercase; /* Texto em maiúsculas para uniformidade */
-    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
-}
-
-/* Efeito ao passar o mouse sobre o botão */
-.btn-proximo:hover {
-    background-color: #388e3c; /* Cor de fundo verde escuro ao passar o mouse */
-}
-/* Estilo inicial do botão secreto */
-#botao-secreto {
-    display: none; /* Esconde o botão por padrão */
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #388e3c; /* Cor de fundo verde escura */
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
-}
-
-/* Exibe o botão quando o mouse está sobre o fundo */
-#fundo-container:hover #botao-secreto {
-    display: block;
-}
-
-/* Adiciona um fundo ao main para detectar o hover */
-#fundo-container {
-    position: relative;
-    height: 100vh; /* Ocupa toda a altura da janela de visualização */
-    background-color: #4caf50; /* Cor de fundo verde */
-}
-/* Estilo inicial do botão secreto */
-#botao-secreto {
-    display: none; /* Esconde o botão por padrão */
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #388e3c; /* Cor de fundo verde escura */
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
-}
-
-/* Exibe o botão quando o mouse está sobre o fundo */
-#fundo-container:hover #botao-secreto {
-    display: block;
-}
-
-/* Adiciona um fundo ao main para detectar o hover */
-#fundo-container {
-    position: relative;
-    height: 100vh; /* Ocupa toda a altura da janela de visualização */
-    background-color: #4caf50; /* Cor de fundo verde */
-}
+    <script src="script.js"></script>
+</body>
+</html>
