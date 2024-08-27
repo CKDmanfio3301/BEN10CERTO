@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Desafio Sekai Taikai</title>
+    <style>
+        /* Adicionar estilo para a mensagem e link no canto superior esquerdo */
+        .mensagem-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 10; /* Ajusta o z-index para não interferir nos botões */
+            background-color: #d32f2f; /* Fundo vermelho */
+            color: #fff; /* Texto branco */
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .mensagem-link a {
+            color: #fff; /* Cor do link */
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .mensagem-link a:hover {
+            text-decoration: underline; /* Sublinha ao passar o mouse */
+        }
+
+        .mensagem-link:hover {
+            background-color: #b71c1c; /* Fundo vermelho escuro ao passar o mouse */
+        }
+
+        /* Garantir que os botões estejam acima do link */
+        button {
+            position: relative; /* Define o posicionamento relativo para permitir o ajuste do z-index */
+            z-index: 20; /* Garante que os botões fiquem acima do link */
+        }
+    </style>
+</head>
+<body>
+    <div class="mensagem-link">
+        <p>Visite nosso site!</p>
+        <a href="https://joc4dapadoc4.github.io/TheJocas.Films/" target="_blank">The Jocas Films</a>
+    </div>
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <img src="img/cenario-passo0.png" alt="Cenário do passo 0">
+            <p>Após vencer o Torneio All Valley, você descobre uma pista sobre o prestigioso Torneio Sekai Taikai. Para se qualificar, você deve superar uma série de desafios que testarão suas habilidades de karatê e coragem. Você está pronto para começar?</p>
+            <button class="btn-proximo" data-proximo="1">Sim, estou pronto!</button>
+            <button class="btn-proximo" data-proximo="2">Ainda não, preciso de mais tempo.</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <p>Você decide que está pronto para o desafio. Seu primeiro teste é encontrar uma pista importante na cidade de Los Angeles. Onde você começa sua busca?</p>
+            <button class="btn-proximo" data-proximo="3">Visitar a Cobra Kai Dojo</button>
+            <button class="btn-proximo" data-proximo="4">Explorar o Miyagi-Do Dojo</button>
+        </div>
+        <div class="passo" id="passo-2">
+            <p>Você decide que ainda não está pronto e prefere treinar mais antes de enfrentar o desafio. Enquanto treina, você se pergunta o que teria encontrado no caminho para o Torneio Sekai Taikai.</p>
+            <img src="giphy.gif" alt="Imagem de treino e preparação">
+        </div>
+        <div class="passo" id="passo-3">
+            <p>No Cobra Kai Dojo, você descobre que a primeira pista leva a um desafio na região montanhosa da Califórnia. É hora de se preparar para o próximo desafio.</p>
+            <button class="btn-proximo" data-proximo="5">Viajar para as montanhas da Califórnia</button>
+        </div>
+        <div class="passo" id="passo-4">
+            <p>No Miyagi-Do Dojo, você encontra uma pista que o direciona para a região montanhosa da Califórnia. Agora é hora de enfrentar o próximo desafio.</p>
+            <button class="btn-proximo" data-proximo="5">Viajar para as montanhas da Califórnia</button>
+        </div>
+        <div class="passo" id="passo-5">
+            <p>Na região montanhosa da Califórnia, você encontra um dojo escondido onde o próximo desafio é realizar um treino especial. Você está pronto para enfrentar este treinamento?</p>
+            <button class="btn-proximo" data-proximo="6">Sim, enfrentar o treinamento!</button>
+            <button class="btn-proximo" data-proximo="7">Desistir e voltar para casa</button>
+        </div>
+        <div class="passo" id="passo-6">
+            <p>Você enfrenta o treinamento com sucesso e descobre que o próximo desafio é viajar para o Japão para se qualificar para o Torneio Sekai Taikai.</p>
+            <button class="btn-proximo" data-proximo="8">Viajar para o Japão</button>
+        </div>
+        <div class="passo" id="passo-7">
+            <p>Você decide que o treinamento é muito difícil e volta para casa, refletindo sobre o que poderia ter conquistado.</p>
+            <img src="cenario-passo4-voltar-casa.png" alt="Imagem de desânimo e reflexão">
+        </div>
+        <div class="passo" id="passo-8">
+            <p>No Japão, você descobre o local do Torneio Sekai Taikai. Você está prestes a enfrentar os melhores lutadores do mundo. Seu desafio final é qual caminho seguir para a arena do torneio.</p>
+            <button class="btn-proximo" data-proximo="9">Seguir pelo caminho principal</button>
+            <button class="btn-proximo" data-proximo="10">Explorar o caminho alternativo</button>
+        </div>
+        <div class="passo" id="passo-9">
+            <p>O caminho principal leva você diretamente à arena do torneio. Após uma série de lutas desafiadoras, você finalmente se sagra campeão do Torneio Sekai Taikai!</p>
+            <img src="cobra-kai-miguel-crane-kick-h2krs69ynbmwloy1.gif" alt="Imagem do campeão do torneio">
+        </div>
+        <div class="passo" id="passo-10">
+            <p>O caminho alternativo leva você a um caminho difícil e sinuoso, mas você encontra uma nova perspectiva sobre a arte do karatê. Apesar de não chegar à arena, você aprende valiosas lições e retorna com uma nova visão.</p>
+            <button class="btn-proximo" data-proximo="9">Voltar e seguir pelo caminho principal</button>
+        </div>
+        <!-- Player de áudio posicionado aqui, dentro do main -->
+        <audio id="background-music" controls>
+            <source src="In The End [Official HD Music Video] - Linkin Park.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
